@@ -7,41 +7,35 @@ use JSON;
 
 our $VERSION = '0.01';
 
-sub new
-{
+sub new {
   my $class = shift;
   return bless { 'data' => { } },  ref $class || $class;
 }
 
-sub addTo
-{
+sub addTo {
   my $self = shift;
   push @{ $self->{data}{to} }, @_;
 }
 
-sub addSubVal
-{
+sub addSubVal {
   my $self = shift;
   my $var = shift;
   push @{ $self->{data}{sub}{$var} }, @_;
 }
 
-sub setUniqueArgs
-{
+sub setUniqueArgs {
   my $self = shift;
   my $val = shift;
   $self->{data}{unique_args} = $val if ref $val eq 'HASH';
 }
 
-sub setCategory
-{
+sub setCategory {
   my $self = shift;
   my $cat = shift;
   $self->{data}{category} = $cat;
 }
 
-sub addFilterSetting
-{
+sub addFilterSetting {
   my $self = shift;
   my $filter = shift;
 
@@ -54,8 +48,7 @@ sub addFilterSetting
   }
 }
 
-sub addUniqueArgs
-{
+sub addUniqueArgs {
   my $self = shift;
 
   my ($unique_args) = ( $self->{data}{unique_args} ||= {} );
@@ -68,23 +61,20 @@ sub addUniqueArgs
 }
 
 my $JSON;
-sub asJSON
-{
+sub asJSON {
   my $self = shift;
   $JSON ||= _build_json();
   return $JSON->encode($self->{data});
 }
 
 my $JSON_PRETTY;
-sub asJSONPretty
-{
+sub asJSONPretty {
   my $self = shift;
   $JSON_PRETTY ||=  _build_json()->pretty(1);
   return $JSON_PRETTY->encode($self->{data});
 }
 
-sub as_string
-{
+sub as_string {
   my $self = shift;
   my $json = $self->asJSON;
   $json =~ s/(.{1,72})(\s)/$1\n   /g;
