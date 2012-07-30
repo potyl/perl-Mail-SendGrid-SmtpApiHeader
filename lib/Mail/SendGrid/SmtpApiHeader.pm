@@ -6,6 +6,8 @@ use strict;
 use warnings;
 use JSON;
 
+our $VERSION = '0.01';
+
 sub new 
 {
   my $class = shift;
