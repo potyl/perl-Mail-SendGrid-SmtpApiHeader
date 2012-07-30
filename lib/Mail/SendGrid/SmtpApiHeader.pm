@@ -1,7 +1,5 @@
 package Mail::SendGrid::SmtpApiHeader;
 
-# Version 1.1
-# Last Updated 7/21/2012
 use strict;
 use warnings;
 use JSON;
