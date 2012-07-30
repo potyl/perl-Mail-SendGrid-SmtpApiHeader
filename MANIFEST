@@ -3,6 +3,7 @@ Makefile.PL
 MANIFEST
 MANIFEST.SKIP
 README
+lib/Mail/SendGrid/SmtpApiHeader.pm
 t/01-tests.t
 MYMETA.json
 MYMETA.yml
