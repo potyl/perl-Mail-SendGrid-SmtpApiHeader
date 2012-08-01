@@ -12,10 +12,12 @@ sub new {
   return bless { 'data' => { } },  ref $class || $class;
 }
 
+
 sub addTo {
   my $self = shift;
   push @{ $self->{data}{to} }, @_;
 }
+
 
 sub addSubVal {
   my $self = shift;
@@ -23,17 +25,20 @@ sub addSubVal {
   push @{ $self->{data}{sub}{$var} }, @_;
 }
 
+
 sub setUniqueArgs {
   my $self = shift;
   my $val = shift;
   $self->{data}{unique_args} = $val if ref $val eq 'HASH';
 }
 
+
 sub setCategory {
   my $self = shift;
   my $cat = shift;
   $self->{data}{category} = $cat;
 }
+
 
 sub addFilterSetting {
   my $self = shift;
@@ -48,6 +53,7 @@ sub addFilterSetting {
   }
 }
 
+
 sub addUniqueArgs {
   my $self = shift;
 
@@ -60,12 +66,14 @@ sub addUniqueArgs {
   }
 }
 
+
 my $JSON;
 sub asJSON {
   my $self = shift;
   $JSON ||= _build_json();
   return $JSON->encode($self->{data});
 }
+
 
 my $JSON_PRETTY;
 sub asJSONPretty {
@@ -74,6 +82,7 @@ sub asJSONPretty {
   return $JSON_PRETTY->encode($self->{data});
 }
 
+
 sub as_string {
   my $self = shift;
   my $json = $self->asJSON;
@@ -81,6 +90,7 @@ sub as_string {
   my $str = "X-SMTPAPI: $json";
   return $str;
 }
+
 
 sub _build_json {
     my $json = JSON->new;
