@@ -204,7 +204,9 @@ Emmanuel Rodriguez <potyl@cpan.org>
 =head1 COPYRIGHT
 
 Copyright (C) 2010 by SendGrid
+
 Copyright (C) 2011 by Booking.com
+
 Copyright (C) 2012 by Emmanuel Rodriguez
 
 =cut
