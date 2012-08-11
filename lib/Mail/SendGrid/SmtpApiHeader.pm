@@ -199,6 +199,9 @@ Returns the JSON version of the requested data in a more human readable way.
 =head1 AUTHOR
 
 SendGrid
+
+Booking.com
+
 Emmanuel Rodriguez <potyl@cpan.org>
 
 =head1 COPYRIGHT
