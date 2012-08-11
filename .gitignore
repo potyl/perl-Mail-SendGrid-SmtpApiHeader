@@ -5,4 +5,4 @@ Mail-SendGrid-SmtpApiHeader-*.tar.gz
 Makefile.old
 MYMETA.json
 MYMETA.yml
-
+.DS_Store
