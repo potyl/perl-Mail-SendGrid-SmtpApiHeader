@@ -16,9 +16,11 @@ sub main {
         LICENSE => 'perl',
 
         META_MERGE => {
-            homepage   => $site,
-            bugtracker => "$site/issues",
-            repository =>  $site,
+            resources => {
+                homepage   => $site,
+                bugtracker => "$site/issues",
+                repository => $site,
+            },
         },
     );
 
