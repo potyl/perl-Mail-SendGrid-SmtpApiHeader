@@ -3,6 +3,8 @@ pm_to_blib
 blib
 Mail-SendGrid-SmtpApiHeader-*.tar.gz
 Makefile.old
+META.json
+META.yml
 MYMETA.json
 MYMETA.yml
 .DS_Store
